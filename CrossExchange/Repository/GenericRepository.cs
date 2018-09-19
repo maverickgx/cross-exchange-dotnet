@@ -9,7 +9,7 @@ namespace CrossExchange
     {
         protected ExchangeContext _dbContext { get; set; }
 
-        public async Task<T> GetAsync(string id)
+        public async Task<T> GetAsync(int id) //Bug fixed
         {
             return await _dbContext.FindAsync<T>(id);
         }

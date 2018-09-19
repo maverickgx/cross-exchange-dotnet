@@ -17,7 +17,7 @@ namespace CrossExchange.Controller
         [HttpGet("{portFolioid}")]
         public async Task<IActionResult> GetPortfolioInfo([FromRoute]int portFolioid)
         {
-            var portfolio = _portfolioRepository.GetAll().Where(x => x.Id.Equals(portFolioid));
+            var portfolio = _portfolioRepository.Query().Where(x => x.Id.Equals(portFolioid)).FirstOrDefault();
             
             return Ok(portfolio);
         }

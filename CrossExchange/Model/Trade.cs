@@ -1,4 +1,7 @@
-﻿namespace CrossExchange
+﻿using System;
+using System.Collections.Generic;
+
+namespace CrossExchange
 {
     public class Trade
     {
@@ -13,5 +16,10 @@
         public int PortfolioId { get; set; }
         
         public string Action { get; set; }
+
+        public static implicit operator List<object>(Trade v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
